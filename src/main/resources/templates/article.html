@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>读书与行走-文章</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/jquery.easyui.min.js}" ></script>
+    <link rel="stylesheet" th:href="@{/css/easyui.css}" />
+    <link rel="stylesheet" th:href="@{/css/icon.css}">
+    <script>
+        $().ready(function(){
+            $('#store').combobox('reload', '/admin/store');
+        });
+    </script>
+</head>
+<body>
+<div class="easyui-panel" style="padding:5px;">
+    <a href="/admin/article" class="easyui-linkbutton" data-options="plain:true">新建文章</a>
+    <a href="/admin/reflection" class="easyui-linkbutton" data-options="plain:true">新建读后感</a>
+</div>
+<h2>读书与行走 > 文章录入</h2>
+<div style="margin:20px 0;"></div>
+<div class="easyui-panel" title="录入文章" style="width:100%;max-width:900px;padding:30px 60px;">
+    <form id="ff" method="post" action="/admin/article" >
+        <div style="margin-bottom:20px">
+            <input class="easyui-combobox" id="store" name="store"
+                   data-options="label:'推荐人仓别:',required:true,valueField:'value',textField:'text'" style="width:100%" editable="false">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" name="name" style="width:100%" data-options="label:'文章名:',required:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" name="recommendName" style="width:100%" data-options="label:'推荐人姓名:',required:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" name="recommendNo" style="width:100%" data-options="label:'推荐人工号:',required:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-datetimebox" name="recommendTime" style="width:100%" data-options="label:'推荐时间:',required:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" name="content" style="width:100%;height:200px" data-options="multiline:true,label:'内容:',required:false">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" name="link" style="width:100%" data-options="label:'文章链接:',required:false">
+        </div>
+    </form>
+    <div style="text-align:center;padding:5px 0">
+        <a href="#" class="easyui-linkbutton" onclick="document.getElementById('ff').submit();return false;" style="width:80px">保存</a>
+    </div>
+</div>
+</body>
+</html>

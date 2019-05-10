@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>读书与行走-主页</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/jquery.easyui.min.js}" ></script>
+    <link rel="stylesheet" th:href="@{/css/easyui.css}" />
+    <link rel="stylesheet" th:href="@{/css/icon.css}">
+</head>
+<body>
+<div class="easyui-panel" style="padding:5px;">
+    <a href="/admin/article" class="easyui-linkbutton" data-options="plain:true">新建文章</a>
+    <a href="/admin/reflection" class="easyui-linkbutton" data-options="plain:true">新建读后感</a>
+</div>
+</body>
+</html>

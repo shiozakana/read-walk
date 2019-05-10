@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>读书与行走-登录</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/jquery.easyui.min.js}" ></script>
+    <link rel="stylesheet" th:href="@{/css/easyui.css}" />
+    <link rel="stylesheet" th:href="@{/css/icon.css}">
+    <!--<link rel="stylesheet" th:href="@{/css/demo.css}">-->
+    <script type="text/javascript">
+        window.onload = function () {
+        };
+    </script>
+</head>
+<body>
+<h2>读书与行走</h2>
+<div style="margin:20px 0;"></div>
+<div class="easyui-panel" title="管理员登录" style="width:100%;max-width:400px;padding:30px 60px;">
+    <form id="ff" method="post" action="/admin/login" >
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" name="userNo" style="width:100%" data-options="label:'用户名:',required:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <input type="password" class="easyui-textbox" name="password" style="width:100%" data-options="label:'密码:',required:true">
+        </div>
+    </form>
+    <div style="text-align:center;padding:5px 0">
+        <a href="#" class="easyui-linkbutton" onclick="document.getElementById('ff').submit();return false;" style="width:80px">登录</a>
+    </div>
+</div>
+<script>
+    function clearForm(){
+        $('#ff').form('clear');
+    }
+</script>
+</body>
+</html>
